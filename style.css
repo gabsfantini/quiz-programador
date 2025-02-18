@@ -35,3 +35,27 @@ header {
         left: 0; /* Volta para a esquerda */
     }
 }
+
+.coracao {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    top: 50%;  
+    left: 0;   
+    border-radius: 50%; 
+    animation: moverCoracao 5s linear infinite, pulsarCoracao 1s ease-in-out infinite; /* Animação com pulso */
+}
+
+@keyframes pulsarCoracao {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Aumenta o coração */
+    }
+    100% {
+        transform: scale(1); /* Retorna ao tamanho normal */
+    }
+}
+
