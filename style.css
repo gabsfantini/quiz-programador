@@ -1,55 +1,19 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+    background-color: #f4f4f4;
 }
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
+#gameArea {
+    background-color: #000;
+    border: 2px solid #fff;
 }
 
-.coracao {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 50%;  
-    left: 0;
-    transform: rotate(45deg); /* Rotaciona o coração */
-    background-color: red;
+canvas {
     display: block;
-    animation: moverCoracao 5s linear infinite;
-}
-
-.coracao::before, .coracao::after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    border-radius: 50%; /* Faz os círculos */
-}
-
-.coracao::before {
-    left: 50px; /* Posição do círculo direito */
-}
-
-.coracao::after {
-    top: -50px; /* Posição do círculo superior */
-}
-
-@keyframes moverCoracao {
-    0% {
-        left: 0; /* Começa na esquerda */
-    }
-    50% {
-        left: 80%; /* Vai até a direita */
-    }
-    100% {
-        left: 0; /* Volta para a esquerda */
-    }
+    background-color: #222;
 }
