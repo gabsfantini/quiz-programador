@@ -1,3 +1,3 @@
 function mostrarMensagem() {
-    alert("Olá! Você criou seu primeiro site! 🎉");
+    alert("Te ama Xuxuzinha! 🎉");
 }
