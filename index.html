@@ -3,74 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo da Cobrinha</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-            flex-direction: column;
-        }
-
-        #gameArea {
-            background-color: #000;
-            border: 2px solid #fff;
-            margin-bottom: 20px;
-        }
-
-        canvas {
-            display: block;
-            background-color: #222;
-        }
-
-        #ranking {
-            font-size: 20px;
-            color: #333;
-            text-align: center;
-        }
-
-        #ranking li {
-            list-style-type: none;
-            margin: 5px 0;
-        }
-    </style>
+    <title>Meu Primeiro Site</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="gameArea">
-        <canvas id="gameCanvas"></canvas>
-    </div>
-    <div id="ranking">
-        <h2>Melhores Placar</h2>
-        <ul id="rankingList"></ul>
-    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <script>
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = 400;
-        canvas.height = 400;
+    <section id="home">
+        <div class="container">
+            <h1>Bem-vindo ao meu site!</h1>
+            <p>Este é o meu primeiro site, feito com amor e dedicação.</p>
+        </div>
+    </section>
 
-        const speed = 100;
-        let snake = [{ x: 150, y: 150 }];
-        let direction = 'RIGHT';
-        let food = generateFood();
-        let score = 0;
+    <section id="about">
+        <div class="container">
+            <h2>Sobre mim</h2>
+            <p>Eu sou uma pessoa apaixonada por tecnologia e criei este site como meu primeiro projeto de web design.</p>
+        </div>
+    </section>
 
-        // Função para gerar comida aleatória
-        function generateFood() {
-            let x = Math.floor(Math.random() * 20) * 20;
-            let y = Math.floor(Math.random() * 20) * 20;
-            return { x, y };
-        }
+    <section id="gallery">
+        <div class="container">
+            <h2>Galeria</h2>
+            <div class="image-gallery">
+                <img src="https://via.placeholder.com/300" alt="Imagem 1">
+                <img src="https://via.placeholder.com/300" alt="Imagem 2">
+                <img src="https://via.placeholder.com/300" alt="Imagem 3">
+            </div>
+        </div>
+    </section>
 
-        // Função para desenhar a cobrinha e a comida
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);  // Limpa o canvas
+    <section id="contact">
+        <div class="container">
+            <h2>Contato</h2>
+            <form action="#">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
 
-            // Desenha cada parte da cobrinha
-           
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
 
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Meu Primeiro Site</p>
+    </footer>
+</body>
+</html>
