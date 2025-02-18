@@ -13,22 +13,39 @@
             height: 100vh;
             margin: 0;
             background-color: #f4f4f4;
+            flex-direction: column;
         }
 
         #gameArea {
             background-color: #000;
             border: 2px solid #fff;
+            margin-bottom: 20px;
         }
 
         canvas {
             display: block;
             background-color: #222;
         }
+
+        #ranking {
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        #ranking li {
+            list-style-type: none;
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
     <div id="gameArea">
         <canvas id="gameCanvas"></canvas>
+    </div>
+    <div id="ranking">
+        <h2>Melhores Placar</h2>
+        <ul id="rankingList"></ul>
     </div>
 
     <script>
@@ -51,5 +68,4 @@
         }
 
         // Função para desenhar a cobrinha e a comida
-        function draw() {
-            ctx.
+        function draw() 
