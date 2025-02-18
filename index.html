@@ -4,13 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Cobrinha</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        #gameArea {
+            background-color: #000;
+            border: 2px solid #fff;
+        }
+
+        canvas {
+            display: block;
+            background-color: #222;
+        }
+    </style>
 </head>
 <body>
     <div id="gameArea">
         <canvas id="gameCanvas"></canvas>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = 400;
+        canvas.height = 400;
+
+        const speed = 100;
+        let snake = [{ x: 150, y: 150 }];
+        let direction = 'RIGHT';
+        let food = generateFood();
+        let score = 0;
+
+        // Função para gerar comida aleatória
+        function generateFood() {
+            let x = Math.floor(Math.random() * 20) * 20;
+            let y = Math.floor(Math.random() * 20) * 20;
+            return { x, y };
+        }
+
+        // Função para desenhar a cobrinha e a comida
+        function draw() {
+            ctx.
