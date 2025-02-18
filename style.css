@@ -4,7 +4,7 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Impede o scroll horizontal */
+    overflow-x: hidden;
 }
 
 header {
@@ -16,12 +16,30 @@ header {
 .coracao {
     width: 50px;
     height: 50px;
-    background-color: red;
     position: absolute;
-    top: 50%;  /* Posiciona verticalmente no meio */
-    left: 0;   /* Começa no lado esquerdo */
-    border-radius: 50%; /* Faz o coração */
-    animation: moverCoracao 5s linear infinite; /* Animação do movimento */
+    top: 50%;  
+    left: 0;
+    transform: rotate(45deg); /* Rotaciona o coração */
+    background-color: red;
+    display: block;
+    animation: moverCoracao 5s linear infinite;
+}
+
+.coracao::before, .coracao::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%; /* Faz os círculos */
+}
+
+.coracao::before {
+    left: 50px; /* Posição do círculo direito */
+}
+
+.coracao::after {
+    top: -50px; /* Posição do círculo superior */
 }
 
 @keyframes moverCoracao {
@@ -35,27 +53,3 @@ header {
         left: 0; /* Volta para a esquerda */
     }
 }
-
-.coracao {
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    position: absolute;
-    top: 50%;  
-    left: 0;   
-    border-radius: 50%; 
-    animation: moverCoracao 5s linear infinite, pulsarCoracao 1s ease-in-out infinite; /* Animação com pulso */
-}
-
-@keyframes pulsarCoracao {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2); /* Aumenta o coração */
-    }
-    100% {
-        transform: scale(1); /* Retorna ao tamanho normal */
-    }
-}
-
